@@ -3,6 +3,7 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TopbarComponent } from './shared/topbar/topbar.component';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule
+  ],
+  exports: [
   ],
   providers: [
     provideClientHydration(withEventReplay())
