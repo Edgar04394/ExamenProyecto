@@ -4,3 +4,111 @@
   font-family: 'Segoe UI', sans-serif;
   color: #333;
 }
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  min-height: 100vh; /* Asegura que ocupe toda la altura */
+}
+
+/* Content */
+.content {
+  flex-grow: 1; /* Esto empuja el footer hacia abajo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.main-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.content h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+
+
+/* Añade esto a tu archivo de estilos */
+.mat-elevation-z8 {
+  width: 100%;
+  overflow: auto;
+  margin: 24px;
+  border-radius: 8px;
+}
+
+/* Estilo más compacto de la tabla contenedora */
+.mat-elevation-z8 {
+  max-width: 90%;
+  margin: 0 auto 24px auto;
+  padding: 8px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+/* Compactar tabla visualmente */
+table {
+  font-size: 13px;
+}
+
+/* Reducir el tamaño de las celdas */
+th.mat-header-cell,
+td.mat-cell {
+  padding: 8px 12px;
+}
+
+/* Reducir altura de las filas */
+tr.mat-row,
+tr.mat-header-row,
+tr.mat-footer-row {
+  height: 42px;
+}
+
+/* Buscar - ajuste contenedor */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Tamaño más pequeño del campo de búsqueda */
+.search-bar {
+  min-width: 800px;
+  width: 100%;
+}
+
+/* Estilo del botón "agregar" en color verde */
+/* Ajustar alineación y altura del botón */
+.add-button {
+  background-color: #4CAF50 !important; /* Verde */
+  color: white !important;
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 56px; /* Igual al mat-form-field por defecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  border: none;
+}
+
+.add-button:hover {
+  background-color: #45a049 !important;
+  cursor: pointer;
+}

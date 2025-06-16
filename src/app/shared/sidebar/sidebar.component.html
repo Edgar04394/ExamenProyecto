@@ -1,30 +1,54 @@
-<!-- Sidebar -->
 <aside class="sidebar">
-    <div class="logo">
-        <img src="/images/NEZTER_CASA.png" alt="Logo" />
-    </div>
-    <nav>
-        <ul>
-            <li>
-                <a [routerLink]="['/empleados']">
-                    <img src="/icons/EMPLEADOS.png" alt="Usuario" width="24" />
-                </a>
+    <ul class="sidebar__list">
+        <a [routerLink]="['/admin-dashboard']">
+            <li class="sidebar__element">
+                <img src="/images/NEZTER_CASA.png" class="sidebar__icon sidebar__icon--logo" />
+                <div class="sidebar__hide">
+                    <p class="sidebar__logo">NEZTER</p>
+                </div>
             </li>
-            <li>
-                <a [routerLink]="['/puestos']">
-                    <img src="/icons/PUESTOS.png" alt="Puestos" width="24" />
-                </a>
+        </a>
+
+        <a [routerLink]="['/admin-empleados']">
+            <li class="sidebar__element">
+
+                <img src="/icons/EMPLEADOS.png" class="sidebar__icon" />
+
+                <div class="sidebar__hide">
+                    <p class="sidebar__text">Empleados</p>
+                </div>
             </li>
-            <li>
-                <a [routerLink]="['/clasificaciones']">
-                    <img src="/icons/CLASIFICACIONES.png" alt="Estadísticas" width="24" />
-                </a>
+        </a>
+
+        <a [routerLink]="['/admin-puestos']">
+            <li class="sidebar__element">
+                <img src="/icons/PUESTOS.png" class="sidebar__icon" />
+
+                <div class="sidebar__hide">
+                    <p class="sidebar__text">Puestos</p>
+                </div>
             </li>
-            <li>
-                <a [routerLink]="['/examenes']">
-                    <img src="/icons/SECCION_EXAMENES.png" alt="Exámenes" width="24" />
-                </a>
+        </a>
+
+        <a [routerLink]="['/admin-clasificaciones']">
+            <li class="sidebar__element">
+                <img src="/icons/CLASIFICACIONES.png" class="sidebar__icon" />
+
+                <div class="sidebar__hide">
+                    <p class="sidebar__text">Clasificaciones</p>
+                </div>
             </li>
-        </ul>
-    </nav>
+        </a>
+
+        <a [routerLink]="['/admin-examenes']">
+            <li class="sidebar__element">
+                <img src="/icons/SECCION_EXAMENES.png" class="sidebar__icon" />
+
+                <div class="sidebar__hide">
+                    <p class="sidebar__text">Examenes</p>
+                </div>
+            </li>
+        </a>
+
+    </ul>
 </aside>

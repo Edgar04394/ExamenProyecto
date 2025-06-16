@@ -1,0 +1,13 @@
+.empleado-home {
+  padding: 20px;
+}
+
+.empleado-home h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.empleado-home p {
+  font-size: 15px;
+  color: #444;
+}
