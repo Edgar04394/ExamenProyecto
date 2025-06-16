@@ -15,15 +15,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'empleados',
-  standalone: true,
+  selector: 'admin-empleados',
   imports: [CommonModule, 
     MatTableModule, MatPaginatorModule, MatTableModule, MatFormFieldModule, MatInputModule, MatIconModule, FormsModule, MatPaginatorModule, CommonModule],
-  templateUrl: './empleados.component.html',
-  styleUrl: './empleados.component.css',
+  templateUrl: './admin-empleados.component.html',
+  styleUrl: './admin-empleados.component.css',
 })
-
-export class EmpleadosComponent implements AfterViewInit { 
+export class AdminEmpleadosComponent implements AfterViewInit { 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   searchText: string = '';
