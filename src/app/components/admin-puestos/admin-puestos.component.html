@@ -1,6 +1,43 @@
 <div class="admin-dashboard">
+  <search></search>
+  <main class="content">
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Puestos</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let puesto of puestos; let i = index">
+            <td>{{ i + 1 | number: '2.0' }}</td>
+            <td>{{ puesto.puesto }}</td>
+            <td class="acciones">
+              <button class="edit">✏️</button>
+              <button class="delete">🗑️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-    <div class="main-content">
-        <h2>Hola</h2>
+      <!-- Pagination -->
+      <div class="pagination">
+        <div class="pagination-info">
+          <span>Filas por página</span>
+          <select class="rows-select">
+            <option value="10" selected>10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+        <div class="pagination-controls">
+          <span class="page-info">1-10 of 32</span>
+          <button class="page-btn">◀</button>
+          <button class="page-btn">▶</button>
+        </div>
+      </div>
     </div>
+  </main>
 </div>

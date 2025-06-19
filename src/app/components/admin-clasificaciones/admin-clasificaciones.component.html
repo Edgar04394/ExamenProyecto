@@ -1,13 +1,46 @@
 <div class="admin-dashboard">
-    <div class="main-content">
-        <section class="content">
-            <img class="main-logo" src="/images/NEZTER_CASA.png" alt="Icono" />
-            <h1>¡Bienvenido!</h1>
-            <p>
-                En este sistema podrás administrar el control de exámenes psicométricos en tu plataforma. Permite crear
-                empleados y puestos, asignando exámenes a los empleados, categorizarlos, e incluso revisar los
-                resultados de los exámenes de cada empleado por medio de la revisión al finalizar un examen.
-            </p>
-        </section>
-    </div>
+    <search></search>
+
+    <main class="content">
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Clasificación</th>
+                        <th>Color</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let clasificacion of clasificaciones; let i = index">
+                        <td>{{ i + 1 | number: '2.0' }}</td>
+                        <td>{{ clasificacion.clasificacion }}</td>
+                        <td>{{ clasificacion.color }}</td>
+                        <td class="acciones">
+                            <button class="edit">✏️</button>
+                            <button class="delete">🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <div class="pagination-info">
+                    <span>Filas por página</span>
+                    <select class="rows-select">
+                        <option value="10" selected>10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                <div class="pagination-controls">
+                    <span class="page-info">1-10 of 32</span>
+                    <button class="page-btn">◀</button>
+                    <button class="page-btn">▶</button>
+                </div>
+            </div>
+        </div>
+    </main>
 </div>

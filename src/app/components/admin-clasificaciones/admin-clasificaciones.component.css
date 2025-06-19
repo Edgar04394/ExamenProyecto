@@ -1,41 +1,109 @@
+/* Contenedor principal */
 .admin-dashboard {
-  display: flex;
-  height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-}
-
-/* Main Content */
-.main-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-}
-
-/* Content */
-.content {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  margin-top: 20px;
+  min-height: calc(100vh - 60px);
 }
 
-.main-logo {
-  width: 120px;
-  margin-bottom: 20px;
+.content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  padding: 15px;
 }
 
-.content h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+/* Table Container */
+.table-container {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.content p {
-  max-width: 700px;
-  line-height: 1.6;
-  font-size: 16px;
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  background-color: #f8f9fa;
+  padding: 16px;
+  text-align: left;
+  font-weight: 500;
+  color: #666;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.data-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.acciones button {
+  margin: 0 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #fafafa;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.rows-select {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.page-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.page-btn {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666;
+}
+
+.page-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

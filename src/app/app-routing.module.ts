@@ -21,8 +21,8 @@ const routes: Routes = [
       { path: 'admin-dashboard', component: BienvenidaAdminComponent, data: { currentTitle: 'Panel Principal' } },
       { path: 'admin-empleados', component: AdminEmpleadosComponent, data: { currentTitle: 'Catálogo de Empleados' } },
       { path: 'admin-puestos', component: AdminPuestosComponent, data: { currentTitle: 'Catálogo de Puestos' } },
-      { path: 'admin-clasificaciones', component: AdminClasificacionesComponent, data: { currentTitle: 'Clasificaciones' } },
-      { path: 'admin-examenes', component: AdminExamenesComponent, data: { currentTitle: 'Exámenes' } }
+      { path: 'admin-clasificaciones', component: AdminClasificacionesComponent, data: { currentTitle: 'Catálogo de Clasificaciones' } },
+      { path: 'admin-examenes', component: AdminExamenesComponent, data: { currentTitle: 'Catálogo de Exámenes' } }
     ]
   },
 
@@ -30,7 +30,7 @@ const routes: Routes = [
     path: '',
     component: EmpleadoDashboardComponent,
     children: [
-      { path: 'empleado-dashboard', component: BienvenidaEmpleadoComponent, data: { currentTitle: 'Inicio del Empleado' } }
+      { path: 'empleado-dashboard', component: BienvenidaEmpleadoComponent, data: { currentTitle: 'Panel Principal' } }
     ]
   }
 ];
