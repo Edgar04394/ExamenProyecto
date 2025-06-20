@@ -11,6 +11,7 @@ import { AdminPuestosComponent } from './components/admin-puestos/admin-puestos.
 import { AdminExamenesComponent } from './components/admin-examenes/admin-examenes.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RoleGuard } from './guards/role.guard';
+import { EmpleadoExamenesComponent } from './components/empleado-examenes/empleado-examenes.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
     canActivate: [AuthGuard, RoleGuard],
     data: { expectedRole: 'Empleado' },
     children: [
-      { path: 'empleado-dashboard', component: BienvenidaEmpleadoComponent }
+      { path: 'empleado-dashboard', component: BienvenidaEmpleadoComponent },
+      { path: 'empleado-examenes', component:  EmpleadoExamenesComponent },
     ]
   }
 

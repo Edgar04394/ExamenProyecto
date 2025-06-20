@@ -5,7 +5,12 @@
     </div>
     <h2>{{ pageTitle() }}</h2>
   </div>
-  <div class="topbar-icons">
+
+  <!-- Ícono con menú -->
+  <div class="topbar-icons" (click)="toggleMenu()">
     <i><img src="/icons/SESION_PERSONA.png" alt="Usuario" width="24" /></i>
+    <div class="dropdown-menu" *ngIf="isMenuOpen">
+      <button (click)="logout()">Cerrar sesión</button>
+    </div>
   </div>
 </header>

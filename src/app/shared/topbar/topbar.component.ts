@@ -1,18 +1,23 @@
 import { Component, inject, signal } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'topbar',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './topbar.component.html',
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent {
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
+  private authService = inject(AuthService);
 
   pageTitle = signal('Bienvenido');
+  isMenuOpen = false;
 
   constructor() {
     this.router.events
@@ -29,5 +34,13 @@ export class TopbarComponent {
       route = route.firstChild;
     }
     return route;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

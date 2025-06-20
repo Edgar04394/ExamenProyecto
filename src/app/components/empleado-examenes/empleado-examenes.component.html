@@ -10,28 +10,19 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nombres</th>
-                            <th>Apellido Paterno</th>
-                            <th>Apellido Materno</th>
-                            <th>Fecha de Nacimiento</th>
-                            <th>Fecha de Incio de Contrato</th>
-                            <th>Puesto</th>
+                            <th>Nombre del Examen</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let empleado of empleados; let i = index">
+                        <tr *ngFor="let examen of examenes; let i = index">
                             <td>{{ i + 1 | number: '2.0' }}</td>
-                            <td>{{ empleado.nombre }}</td>
-                            <td>{{ empleado.apellidoPaterno }}</td>
-                            <td>{{ empleado.apellidoMaterno }}</td>
-                            <td>{{ empleado.fechaNacimiento | date: 'dd / MM / yy' }}</td>
-                            <td>{{ empleado.fechaInicio | date: 'dd / MM / yy' }}</td>
-                            <td>{{ empleado.puesto }}</td>
+                            <td>{{ examen.nombre_examen }}</td>
+                            <td>{{ examen.estado }}</td>
                             <td class="acciones">
-                                <button class="edit">✏️</button>
-                                <button class="delete">🗑️</button>
-                                <button class="view">👁️</button>
+                                <button class="responder" title="Responder">✏️</button>
+                                <button class="ver-resultados">🔍</button>
                             </td>
                         </tr>
                     </tbody>

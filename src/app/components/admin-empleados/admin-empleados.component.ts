@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'admin-empleados',
-  imports: [CommonModule, CommonModule, SearchComponent, RouterModule],
+  imports: [CommonModule, SearchComponent, RouterModule],
   templateUrl: './admin-empleados.component.html',
   styleUrl: './admin-empleados.component.css',
 })
