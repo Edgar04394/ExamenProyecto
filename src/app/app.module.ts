@@ -3,7 +3,9 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopbarComponent } from './shared/topbar/topbar.component';
+
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,12 +13,12 @@ import { TopbarComponent } from './shared/topbar/topbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
-  exports: [
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideHttpClient(withFetch()),  // ✅ Reemplazo moderno
+    provideClientHydration(withEventReplay()) // ⚙️ Mantienes SSR con rehidratación
   ],
   bootstrap: [AppComponent]
 })

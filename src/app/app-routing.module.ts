@@ -9,6 +9,9 @@ import { AdminEmpleadosComponent } from './components/admin-empleados/admin-empl
 import { AdminClasificacionesComponent } from './components/admin-clasificaciones/admin-clasificaciones.component';
 import { AdminPuestosComponent } from './components/admin-puestos/admin-puestos.component';
 import { AdminExamenesComponent } from './components/admin-examenes/admin-examenes.component';
+import { AuthGuard } from './guards/auth.guard';
+import { RoleGuard } from './guards/role.guard';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, data: { currentTitle: 'Inicio de sesión' } },
@@ -17,22 +20,26 @@ const routes: Routes = [
   {
     path: '',
     component: AdminDashboardComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { expectedRole: 'Administrador' },
     children: [
-      { path: 'admin-dashboard', component: BienvenidaAdminComponent, data: { currentTitle: 'Panel Principal' } },
-      { path: 'admin-empleados', component: AdminEmpleadosComponent, data: { currentTitle: 'Catálogo de Empleados' } },
-      { path: 'admin-puestos', component: AdminPuestosComponent, data: { currentTitle: 'Catálogo de Puestos' } },
-      { path: 'admin-clasificaciones', component: AdminClasificacionesComponent, data: { currentTitle: 'Catálogo de Clasificaciones' } },
-      { path: 'admin-examenes', component: AdminExamenesComponent, data: { currentTitle: 'Catálogo de Exámenes' } }
+      { path: 'admin-dashboard', component: BienvenidaAdminComponent },
+      { path: 'admin-empleados', component: AdminEmpleadosComponent },
+      { path: 'admin-puestos', component: AdminPuestosComponent },
+      { path: 'admin-clasificaciones', component: AdminClasificacionesComponent },
+      { path: 'admin-examenes', component: AdminExamenesComponent }
     ]
   },
-
   {
     path: '',
     component: EmpleadoDashboardComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { expectedRole: 'Empleado' },
     children: [
-      { path: 'empleado-dashboard', component: BienvenidaEmpleadoComponent, data: { currentTitle: 'Panel Principal' } }
+      { path: 'empleado-dashboard', component: BienvenidaEmpleadoComponent }
     ]
   }
+
 ];
 
 
