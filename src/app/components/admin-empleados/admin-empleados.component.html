@@ -1,7 +1,10 @@
 <div class="admin-dashboard">
-
     <div class="main-content">
-        <search></search>
+        <!-- Aquí colocas los componentes -->
+        <search (agregar)="abrirModal()"></search>
+        <empleado-modal *ngIf="modalVisible" [visible]="modalVisible" (cerrar)="cerrarModal()"
+            (guardar)="agregarEmpleado($event)">
+        </empleado-modal>
 
         <main class="content">
             <!-- Table Section -->
@@ -26,7 +29,7 @@
                             <td>{{ empleado.apellidoPaterno }}</td>
                             <td>{{ empleado.apellidoMaterno }}</td>
                             <td>{{ empleado.fechaNacimiento | date: 'dd / MM / yy' }}</td>
-                            <td>{{ empleado.fechaInicio | date: 'dd / MM / yy' }}</td>
+                            <td>{{ empleado.fechaInicioContrato| date: 'dd / MM / yy' }}</td>
                             <td>{{ empleado.puesto }}</td>
                             <td class="acciones">
                                 <button class="edit">✏️</button>

@@ -9,21 +9,23 @@ import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { EmpleadoModalComponent } from './components/empleado-modal/empleado-modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,  // ✅ Necesario para ngx-toastr
-    ToastrModule.forRoot(),   // ✅ Configuración global de toastr
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(), 
+    EmpleadoModalComponent
   ],
   providers: [
-    provideHttpClient(withFetch()),  // ✅ Reemplazo moderno
-    provideClientHydration(withEventReplay()) // ⚙️ Mantienes SSR con rehidratación
+    provideHttpClient(withFetch()),
+    provideClientHydration(withEventReplay())
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,31 @@
+<div class="modal-backdrop">
+  <div class="modal-content">
+    <h2>Agregar Empleado</h2>
+    <form (ngSubmit)="guardarEmpleado()">
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="empleado.nombre" name="nombre" required />
+
+      <label>Apellido Paterno</label>
+      <input type="text" [(ngModel)]="empleado.apellidoPaterno" name="apellidoPaterno" required />
+
+      <label>Apellido Materno</label>
+      <input type="text" [(ngModel)]="empleado.apellidoMaterno" name="apellidoMaterno" required />
+
+      <label>Fecha de Nacimiento</label>
+      <input type="date" [(ngModel)]="empleado.fechaNacimiento" name="fechaNacimiento" required />
+
+      <label>Fecha de Inicio de Contrato</label>
+      <input type="date" [(ngModel)]="empleado.fechaInicioContrato" name="fechaInicio" required />
+
+      <label>Puesto</label>
+      <select [(ngModel)]="empleado.puesto" name="puesto" required>
+        <option *ngFor="let p of puestos" [value]="p">{{ p }}</option>
+      </select>
+
+      <div class="botones">
+        <button type="button" class="cancelar" (click)="cerrar.emit()">Cancelar</button>
+        <button type="submit" class="guardar">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
